@@ -12,13 +12,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
-public class NastySurprise implements ActionListener {
+public class NastySurprise implements ActionListener{
 
 	JFrame frame=new JFrame();
 	JPanel panel=new JPanel();
 	JButton button1=new JButton();
 	JButton button2=new JButton();
+	
 	
 public void run() {
 	
@@ -29,10 +29,14 @@ public void run() {
 	
 	button1.setText("Trick");
 	button2.setText("Treat");
+	
 	button1.addActionListener(this);
 	button2.addActionListener(this);
+	
+	
 
 	
+
 	
 	
 	
@@ -56,14 +60,16 @@ private void showPictureFromTheInternet(String imageUrl) {
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	if(e.getSource()==button1) {
-		showPictureFromTheInternet("");
+		showPictureFromTheInternet("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=640:*");
 	}
 	
 	if(e.getSource()==button2) {
-		showPictureFromTheInternet("");
+		showPictureFromTheInternet("https://pbs.twimg.com/media/D4Suw6eUwAAHh63.jpg");
 	}
 	
 	
 }
 
 }
+
+

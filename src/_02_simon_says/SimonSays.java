@@ -30,22 +30,28 @@ public class SimonSays extends KeyAdapter {
 
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
-
+	JFrame frame=new JFrame();
 	public void run() {
 		// 2. Add the four images that match keyboard keys like this:
 		// images.put(KeyEvent.VK_UP, "up.jpg");
-
+		images.put(KeyEvent.VK_UP, "up.jpg");
+		images.put(KeyEvent.VK_DOWN, "down.jpg");
+		images.put(KeyEvent.VK_RIGHT, "right.jpg");
+		images.put(KeyEvent.VK_LEFT, "left.jpg");
+		
 		// 3. Use a JOptionPane to tell the user the rules: "Press the matching
 		// key when
 		// 'Simon says' otherwise press a different key"
-
+		JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key.");
+		
+		
 		// 4. Call the showImage method to show an image
-
+		showImage();
 	}
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-
+		
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 
 		// 17. Increase the value of score
