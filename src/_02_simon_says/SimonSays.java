@@ -9,6 +9,7 @@ import java.awt.Component;
 import java.awt.Frame;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class SimonSays extends KeyAdapter {
 	private int tries = 0;
 	private boolean simonSays = false;
 	Date timeAtStart;
-
+	private int points = 0;
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame frame=new JFrame();
@@ -52,12 +53,26 @@ public class SimonSays extends KeyAdapter {
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
 		
+		
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-
+		int keyCode = e.getKeyCode();
+		if (simonSays && e.getKeyCode() == imageIndex) {
+			points++;
+			speak("You are correct");
+			
+		}else if(!simonSays && !(keyCode == imageIndex)) { 
+			points++;
+			speak("You are correct");
+			
+		}
+		tries++;
+		
+		
 		// 17. Increase the value of score
-
+		
+		
 		// 18. Use the speak method to tell the user they were correct
-
+		
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't
 		// say..."
 
@@ -68,47 +83,59 @@ public class SimonSays extends KeyAdapter {
 		// 22. Increment tries by 1
 
 		// 25. If tries is greater than 9 (or however many you want)...
-
+		if (tries>9) {
+			JOptionPane.showMessageDialog(null, points);
+		}
 		// 26. Tell the user their score
-
+		
 		// 27. Exit the program
-
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 		// 23. Dispose of the frame
-
+		frame.dispose();
 		// 24. Call the showImage method to show a new image
+		showImage();
 	}
 
 	private void showImage() {
 		// 5. Initialize your frame to a new JFrame()
-
+		frame=new JFrame();
 		// 6. Set the frame to visible
-
+		frame.setVisible(true);
 		// 7. Uncomment the following line to add a random image to your frame
-		// frame.add(getNextRandomImage());
+		frame.add(getNextRandomImage());
 
 		// 8. Set the name of your frame
-
+		frame.setName("idk");
 		// 9. Pack the frame
-
+		frame.pack();
 		// 10. Set the defaultCloseOperation of your frame to
 		// JFrame.EXIT_ON_CLOSE
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 11. Add a key listener to the frame
-
+		
+		frame.addKeyListener(null);
+		
 		// 12. Create a new instance of Random
-
+		 Random random=new Random();
 		// 13. Use the Random and the speak method to either say
 		// "Simon says press this key" or "Press this key"
-
+		 int randomNumber = random.nextInt();
+		 if (randomNumber % 2 == 0) {
+			 speak("Simon says press this key"); 
+			 simonSays = true;
+		 } else{
+			 speak("Press this key");
+			 simonSays = false;
+		 }
 		// 14. Above, set the value of simonSays to true/false appropriately
-
+		 
 	}
 
 	private Component getNextRandomImage() {
 		this.imageIndex = new Random().nextInt(4) + 37;
 		return loadImage(images.get(imageIndex));
 	}
-
+ 
 	private JLabel loadImage(String fileName) {
 		URL imageURL = getClass().getResource(fileName);
 		Icon icon = new ImageIcon(imageURL);
