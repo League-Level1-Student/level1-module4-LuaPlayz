@@ -32,6 +32,7 @@ public class SimonSays extends KeyAdapter {
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame frame=new JFrame();
+	
 	public void run() {
 		// 2. Add the four images that match keyboard keys like this:
 		// images.put(KeyEvent.VK_UP, "up.jpg");
@@ -47,10 +48,12 @@ public class SimonSays extends KeyAdapter {
 		
 		
 		// 4. Call the showImage method to show an image
-		showImage();
+		
 	}
 
 	public void keyPressed(KeyEvent e) {
+		
+		showImage();
 		// 15. Make a points variable to track the score.
 		
 		
@@ -58,10 +61,12 @@ public class SimonSays extends KeyAdapter {
 		int keyCode = e.getKeyCode();
 		if (simonSays && e.getKeyCode() == imageIndex) {
 			points++;
+			System.out.println("You are correct");
 			speak("You are correct");
 			
 		}else if(!simonSays && !(keyCode == imageIndex)) { 
 			points++;
+			System.out.println("You are correct");
 			speak("You are correct");
 			
 		}
@@ -113,7 +118,7 @@ public class SimonSays extends KeyAdapter {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 11. Add a key listener to the frame
 		
-		frame.addKeyListener(null);
+		frame.addKeyListener(this);
 		
 		// 12. Create a new instance of Random
 		 Random random=new Random();
