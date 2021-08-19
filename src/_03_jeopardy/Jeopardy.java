@@ -55,13 +55,14 @@ public class Jeopardy implements ActionListener {
 		// 2. Give your frame a title
 		frame.setName("fram");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-
+		JPanel createHeader;
+		
 		// 4. Add the header component to the quizPanel
-
+		quizPanel.add();
 		// 5. Add the quizPanel to the frame
-
+		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-
+		createButton
 		// 7. Add the firstButton to the quizPanel
 
 		// 8. Write the code to complete the createButton() method below. Check that your
