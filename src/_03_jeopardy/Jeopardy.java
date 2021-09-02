@@ -58,13 +58,13 @@ public class Jeopardy implements ActionListener {
 		JPanel createHeader;
 		
 		// 4. Add the header component to the quizPanel
-		quizPanel.add();
+		quizPanel.add(header);
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		createButton
+		
 		// 7. Add the firstButton to the quizPanel
-
+		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 
@@ -72,7 +72,7 @@ public class Jeopardy implements ActionListener {
 		// method
 
 		// 10. Add the secondButton to the quizPanel
-
+		quizPanel.add(secondButton)
 		// 11. Add action listeners to the buttons (2 lines of code)
 
 		// 12. Write the code to complete the actionPerformed() method below
