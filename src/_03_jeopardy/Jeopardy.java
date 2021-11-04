@@ -89,6 +89,10 @@ public class Jeopardy implements ActionListener {
 		
 		fifthButton=createButton("$1000");
 		quizPanel.add(fifthButton);
+		
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
+		fifthButton.addActionListener(this);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
