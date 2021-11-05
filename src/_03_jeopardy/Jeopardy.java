@@ -85,6 +85,7 @@ public class Jeopardy implements ActionListener {
 		quizPanel.add(thirdButton);
 		
 		fourthButton=createButton("$800");
+		
 		quizPanel.add(fourthButton);
 		
 		fifthButton=createButton("$1000");
