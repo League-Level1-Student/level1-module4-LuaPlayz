@@ -131,7 +131,7 @@ public class Jeopardy implements ActionListener {
 			
 		
 			// Call the askQuestion() method
-			askQuestion("question","answer",100);
+			askQuestion("How many months are in a year?","12",200);
 		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 
@@ -140,7 +140,25 @@ public class Jeopardy implements ActionListener {
 			
 		
 			// Call the askQuestion() method with a harder question
-			askQuestion("question2","answer",200);
+			askQuestion("question2","answer",400);
+		}
+		if(buttonPressed==thirdButton) {
+			
+			
+			// Call the askQuestion() method with a harder question
+			askQuestion("question3","answer",600);
+		}
+		if(buttonPressed==fourthButton) {
+			
+			
+			// Call the askQuestion() method with a harder question
+			askQuestion("question4","answer",800);
+		}
+		if(buttonPressed==fifthButton) {
+			
+			
+			// Call the askQuestion() method with a harder question
+			askQuestion("question25","answer",1000);
 		}
 		// Clear the text on the button that was pressed (set the button text to nothing)
 		buttonPressed.setText("");
