@@ -140,25 +140,25 @@ public class Jeopardy implements ActionListener {
 			
 		
 			// Call the askQuestion() method with a harder question
-			askQuestion("question2","answer",400);
+			askQuestion("How many minutes are in an hour?","60",400);
 		}
 		if(buttonPressed==thirdButton) {
 			
 			
 			// Call the askQuestion() method with a harder question
-			askQuestion("question3","answer",600);
+			askQuestion("How many hours are in a day?","24",600);
 		}
 		if(buttonPressed==fourthButton) {
 			
 			
 			// Call the askQuestion() method with a harder question
-			askQuestion("question4","answer",800);
+			askQuestion("How many days are in a week?","7",800);
 		}
 		if(buttonPressed==fifthButton) {
 			
 			
 			// Call the askQuestion() method with a harder question
-			askQuestion("question25","answer",1000);
+			askQuestion("How many weeks are in a year?","52",1000);
 		}
 		// Clear the text on the button that was pressed (set the button text to nothing)
 		buttonPressed.setText("");
